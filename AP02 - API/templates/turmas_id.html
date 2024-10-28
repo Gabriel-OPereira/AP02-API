@@ -1,0 +1,45 @@
+<!-- detalhes_aluno.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes da Turma</title>
+</head>
+
+<body>
+  <h1>Detalhes da Turma</h1>
+  <p><strong>ID:</strong> {{ turma.id }}</p>
+  <p><strong>Descrição:</strong> {{ turma.descricao }}</p>
+  <p><strong>Professor:</strong> {{ turma.professor }}</p>
+  <p><strong>Ativo:  </strong> '{{ turma.ativo}}'</p>
+
+  
+  
+
+  <style>
+    .form-inline {
+      display: inline-block;
+      margin-right: 10px; /* Ajuste o espaçamento conforme necessário */
+    }
+  </style>
+  <form id="delete-form" action="{{ url_for('turmas.delete_turma', id_turma=turma.id) }}" method="POST" class="form-inline">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Excluir Turma</button>
+  </form>
+
+  <form id="insert-form" action="{{ url_for('turmas.adicionar_turma_page') }}" method="GET" class="form-inline">
+    <input type="hidden" name="_method" value="GET">
+    <button type="submit">Adicionar Nova Turma</button>
+  </form>
+
+  <form id="update-form" action="{{ url_for('turmas.editar_turma_page', id_turma=turma.id) }}" method="GET" class="form-inline">
+    <input type="hidden" name="_method" value="GET">
+    <button type="submit">Editar Turma</button>
+  </form>
+  
+
+</body>
+
+</html>

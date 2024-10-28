@@ -1,0 +1,36 @@
+<!-- adicionar_aluno.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Aluno</title>
+</head>
+
+<body>
+  <h1>Adicionar Aluno</h1>
+  <form action="{{ url_for('alunos.create_aluno') }}" method="post">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+    
+    <label for="idade">Idade:</label><br>
+    <input type="number" id="idade" name="idade" required><br>
+    
+    <label for="turma_id">Turma:</label><br>
+    <input type="text" id="turma_id" name="turma_id" required><br>
+    
+    <label for="dt_nasc">Data de Nascimento:</label><br>
+    <input type="date" id="dt_nasc" name="dt_nasc" required><br>
+    
+    <label for="nt_primeiro_semestre">Nota Primeiro Semestre:</label><br>
+    <input type="number" id="nt_primeiro_semestre" name="nt_primeiro_semestre" step="0.01" required><br>
+    
+    <label for="nt_segundo_semestre">Nota Segundo Semestre:</label><br>
+    <input type="number" id="nt_segundo_semestre" name="nt_segundo_semestre" step="0.01" required><br>
+    <br>
+    <input type="submit" value="Adicionar Aluno">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!-- adicionar_aluno.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Professor</title>
+</head>
+
+<body>
+  <h1>Adicionar Professor</h1>
+  <form action="{{ url_for('professores.create_professores') }}" method="post">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br>
+    
+    <label for="idade">Idade:</label><br>
+    <input type="number" id="idade" name="idade" required><br>
+    
+    <label for="materia">Materia:</label><br>
+    <input type="text" id="materia" name="materia" required><br>
+
+    <label for="onbservacoes">Observações:</label><br>
+    <input type="text" id="observacoes" name="observacoes" required><br>
+    
+   <br>
+    <input type="submit" value="Adicionar Materia">
+  </form>
+</body>
+
+</html>
